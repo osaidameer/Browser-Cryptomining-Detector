@@ -1,4 +1,3 @@
-import os
 import psutil
 from psutil import Process
 from awaits.awaitable import awaitable
@@ -16,7 +15,7 @@ def _worker(p: Process):
             'memory': p.memory_full_info().uss
         }
     except Exception as e:
-        # print('ERROR:', e)
+        print('ERROR:', e)
         return None
 
 
